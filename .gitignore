@@ -1,0 +1,9 @@
+# ── Python ──
+__pycache__/
+
+# ── Entornos ──
+.venv/
+.devcontainer
+
+# ── VSCode ──
+.vscode/
