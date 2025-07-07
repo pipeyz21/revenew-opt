@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Revenew ‒ Resultados</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
+    .nav { text-align: right; }
+    .nav a { margin-left: 10px; text-decoration: none; color: #007bff; }
+    .nav a:hover { text-decoration: underline; }
+    .results { border: 1px solid #ddd; padding: 20px; border-radius: 4px; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 8px; }
+    .objective { font-weight: bold; margin-top: 15px; }
+    img.chart { display: block; margin: 20px auto; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="{% url 'index' %}">&larr; Inicio</a>
+    <a href="{% url 'upload' %}">Subir CSV</a>
+    <a href="{% url 'manual' %}">Ingreso Manual</a>
+  </div>
+
+  <h1>Resultados de Optimización</h1>
+  <div class="results">
+    <p><strong>Estado:</strong> {{ status }}</p>
+    <ul>
+      {% for product, qty in solution.items %}
+      <li>{{ product }}: {{ qty }} unidades</li>
+      {% endfor %}
+    </ul>
+    <p class="objective">Ingreso Total: ${{ objective }}</p>
+
+    {% if chart %}
+    <h2>Gráfico de Producción Óptima</h2>
+    <img class="chart" src="data:image/png;base64,{{ chart }}" alt="Gráfico de producción óptima" />
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba Técnica - Revenew</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .btn {
+      display: inline-block; padding: 10px 20px; margin: 10px;
+      background: #007bff; color: white; text-decoration: none; border-radius: 4px;
+    }
+    .btn:hover { background: #0056b3 ;}
+  </style>
+</head>
+<body>
+  <h1>Bienvenido</h1>
+  <p>Elige cómo quieres ingresar los datos:</p>
+  <a href="{% url 'upload' %}" class="btn">Subir CSV</a>
+  <a href="{% url 'manual' %}" class="btn">Ingreso Manual</a>
+</body>
+</html>

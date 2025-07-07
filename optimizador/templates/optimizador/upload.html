@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba Técnica - Subir CSV</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
+    .nav { text-align: right; }
+    .nav a { margin-left: 10px; text-decoration: none; color: #007bff; }
+    .nav a:hover { text-decoration: underline; }
+    form { border: 1px solid #ddd; padding: 20px; border-radius: 4px; }
+    .field { margin-bottom: 15px; }
+    label { display: block; font-weight: bold; margin-bottom: 5px; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; }
+    button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 4px; }
+    button:hover { background: #1e7e34; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="{% url 'index' %}">&larr; Inicio</a>
+    <a href="{% url 'manual' %}">Ingreso Manual &rarr;</a>
+  </div>
+
+  <h1>Subir archivo CSV</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="field">
+      {{ form.csv_file.label_tag }}
+      {{ form.csv_file }}
+      <small>{{ form.csv_file.help_text }}</small>
+      {{ form.csv_file.errors }}
+    </div>
+    <button type="submit">Optimizar</button>
+  </form>
+</body>
+</html>
