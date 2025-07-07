@@ -1,0 +1,20 @@
+# Ignorar variables de entorno reales
+.env
+
+# Logs y archivos generados
+logs/
+*.log
+
+# Entornos virtuales
+.venv/
+env/
+__pycache__/
+
+# Archivos de sistema
+*.sqlite3
+*.pyc
+.DS_Store
+
+# Git
+.git
+.gitignore
