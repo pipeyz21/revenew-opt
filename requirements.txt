@@ -2,3 +2,4 @@ Django
 pandas
 numpy
 pulp
+matplotlib
