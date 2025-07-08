@@ -2,6 +2,8 @@
 
 ## Acerca de esta Prueba Técnica
 
+**Página desplegada:** [https://revenew-opt-production.up.railway.app/](https://revenew-opt-production.up.railway.app/)
+
 En esta prueba técnica desarrollaré una aplicación **backend** con **Django 3.2+** y **Python 3.10**, denominada Revenew, cuyo objetivo es:
 
 * Cargar y validar un archivo CSV con datos de productos (precios, tiempos de máquina, etc.).
